@@ -13,6 +13,7 @@
     <% @kanjis.each do |kanji| %>
       <tr>
         <td><%= kanji.kanji %></td>
+        <td><%= kanji.year_id %>年生</td>
         <td><%= link_to 'Show', kanji %></td>
         <td><%= link_to 'Edit', edit_kanji_path(kanji) %></td>
         <td><%= link_to 'Destroy', kanji, method: :delete, data: { confirm: 'Are you sure?' } %></td>

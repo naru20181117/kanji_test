@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>years</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= @year.kanjis.each do |k| %>
+      <tr>
+        <td><%= k.kanji %>年生</td>
+        <td><%= link_to 'Show', k %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

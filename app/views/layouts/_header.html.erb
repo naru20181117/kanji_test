@@ -1,0 +1,21 @@
+<header class='position-sticky'>
+  <ul class='header-body'>
+    <li class='text-monospace m-3'>
+      <%= @year ? "#{@year.year}年生" : "漢字表" %>
+    </li>
+    <li class=''>
+      <li class=''>
+        <%= link_to '漢字', kanjis_path %>
+      </li>
+      <li class=''>
+        <%= link_to 'root', root_path %>
+      </li>
+      <li class=''>
+        <%= link_to 'year', years_path %>
+      </li>
+    </li>
+    <li class='waves-effect waves-orange btn orange darken-1 mx-2 nav-link'>
+      <%= link_to '漢字投稿', new_kanji_path %>
+    </li>
+  </ul>
+</header>

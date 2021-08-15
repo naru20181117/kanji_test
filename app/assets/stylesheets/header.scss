@@ -1,0 +1,32 @@
+header {
+  width: 100%;
+  min-height: 4rem;
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+  display: flex;
+  align-items: center;
+  ul {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.header-body {
+      padding: 1rem 0;
+    }
+
+    li {
+      list-style: none;
+      a {
+        color: #353535;
+        text-decoration: none;
+      }
+      .serch_column {
+        opacity: 0.5;
+        width: 200px;
+      }
+    }
+  }
+}
