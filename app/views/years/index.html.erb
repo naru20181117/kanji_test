@@ -11,10 +11,12 @@
 
   <tbody>
     <% @years.each do |year| %>
-      <tr>
-        <td><%= year.year %>年生</td>
-        <td><%= link_to 'Show', year %></td>
-      </tr>
+      <% if year.year != 0 %>
+        <tr>
+          <td><%= year.year %>年生</td>
+          <td><%= link_to 'Show', year %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
