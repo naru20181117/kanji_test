@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_15_043440) do
+ActiveRecord::Schema.define(version: 2021_08_15_050133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_08_15_043440) do
     t.string "yomi"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "year_id", default: 0
+    t.index ["year_id"], name: "index_kanjis_on_year_id"
   end
 
   create_table "years", force: :cascade do |t|
