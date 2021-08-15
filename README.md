@@ -21,4 +21,15 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## DB
+
+|Year||
+|:-:|:-:|:-:|
+|year|integer|
+
+|Kanji||
+|:-:|:-:|:-:|
+|kanji|string|
+|meaning|string|
+|yomi|string|
+|year_id|integer|
