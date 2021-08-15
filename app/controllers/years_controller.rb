@@ -13,7 +13,7 @@ class YearsController < ApplicationController
       format.html
       format.pdf do
 
-        pdf = TestPdf.new(@tests)
+        pdf = TestPdf.new(@tests, params[:id])
 
         send_data pdf.render,
           filename:    "kanji_test.pdf",
