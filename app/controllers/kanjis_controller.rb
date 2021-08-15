@@ -64,6 +64,6 @@ class KanjisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def kanji_params
-      params.fetch(:kanji, {})
+      params.require(:kanji).permit(:kanji, :meaning, :yomi, :year_id)
     end
 end

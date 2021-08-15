@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :kanji %>
+    <%= form.text_field :kanji %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_id %>
+    <%= form.number_field :year_id %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
