@@ -5,17 +5,14 @@
     </li>
     <li class=''>
       <li class=''>
-        <%= link_to '漢字', kanjis_path %>
+        <%= button_to '漢字', kanjis_path, {method: :get} %>
       </li>
       <li class=''>
-        <%= link_to 'root', root_path %>
-      </li>
-      <li class=''>
-        <%= link_to 'year', years_path %>
+        <%= button_to '学年', years_path, {method: :get} %>
       </li>
     </li>
     <li class='waves-effect waves-orange btn orange darken-1 mx-2 nav-link'>
-      <%= link_to '漢字投稿', new_kanji_path %>
+      <%= button_to '漢字投稿', new_kanji_path, {method: :get} %>
     </li>
   </ul>
 </header>

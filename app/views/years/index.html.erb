@@ -1,23 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>years</h1>
+<h1>学年ごとの漢字</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @years.each do |year| %>
-      <% if year.year != 0 %>
-        <tr>
-          <td><%= year.year %>年生</td>
-          <td><%= link_to 'Show', year %></td>
-        </tr>
-      <% end %>
+<div class="wrapper">
+  <% @years.each do |year| %>
+    <% if year.year != 0 %>
+      <div>
+        <b class="kanji"><%= link_to "#{year.year}年生", year %></b>
+        <b class=""><%= link_to "PDFを表示", pdf_year_path(id: year.id, format: "pdf")%></b>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+</div>
 

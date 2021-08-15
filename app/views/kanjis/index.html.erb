@@ -1,27 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Kanjis</h1>
+<h1>漢字</h1>
+<h3><%= @kanjis.count %>文字</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @kanjis.each do |kanji| %>
-      <tr>
-        <td><%= kanji.kanji %></td>
-        <td><%= kanji.year_id %>年生</td>
-        <td><%= link_to 'Show', kanji %></td>
-        <td><%= link_to 'Edit', edit_kanji_path(kanji) %></td>
-        <td><%= link_to 'Destroy', kanji, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% (1..6).each do |n| %>
+  <h3><%= n %>年生</h3>
+  <div class="wrapper">
+    <% @kanjis.where(year_id: n).each do |kanji| %>
+      <div class="kanji-mini">
+        <%= link_to kanji.kanji, kanji %>
+      </div>
+    <%# <td><%= link_to 'Destroy', kanji, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<% end %>
 
-<br>
-
-<%= link_to 'New Kanji', new_kanji_path %>
+<%= link_to '新しい漢字を追加', new_kanji_path %>
