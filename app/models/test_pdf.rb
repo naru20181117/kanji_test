@@ -29,6 +29,7 @@ class TestPdf < Prawn::Document
   def contain
     turn_num = (@records.count / 10) + 1
     each_record = @records.in_groups(turn_num)
+    roop_num = turn_num < 10 ? turn_num : 10
 
     turn_num.times do |n|
       array = []
@@ -42,7 +43,7 @@ class TestPdf < Prawn::Document
         table.cells.height = 30
       end
 
-      nulls = [[''] * 10]
+      nulls = [[''] * roop_num]
       table nulls, column_widths: 50, position: :center do |table|
         table.cells.height = 50
       end

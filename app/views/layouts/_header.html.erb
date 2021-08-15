@@ -1,18 +1,18 @@
 <header class='position-sticky'>
   <ul class='header-body'>
     <li class='text-monospace m-3'>
-      <%= @year ? "#{@year.year}年生" : "漢字表" %>
+      <h1><%= @year ? "#{@year.year}年生" : "漢字テスト" %></h1>
     </li>
     <li class=''>
       <li class=''>
-        <%= button_to '漢字', kanjis_path, {method: :get} %>
+        <%= button_to 'かんじ', kanjis_path, {method: :get} %>
       </li>
       <li class=''>
-        <%= button_to '学年', years_path, {method: :get} %>
+        <%= button_to 'がくねん', years_path, {method: :get} %>
       </li>
     </li>
     <li class='waves-effect waves-orange btn orange darken-1 mx-2 nav-link'>
-      <%= button_to '漢字投稿', new_kanji_path, {method: :get} %>
+      <%= button_to 'かんじをふやす', new_kanji_path, {method: :get} %>
     </li>
   </ul>
 </header>

@@ -4,15 +4,14 @@
 <h3><%= @kanjis.count %>文字</h3>
 
 <% (1..6).each do |n| %>
-  <h3><%= n %>年生</h3>
+  <div class="wrapper">
+    <h3 class="year"><%= link_to "#{n}年生", year_path(n) %></h3>
+    <h4><%= link_to "PDFを表示", pdf_year_path(id: n, format: "pdf")%></h4>
+  </div>
   <div class="wrapper">
     <% @kanjis.where(year_id: n).each do |kanji| %>
-      <div class="kanji-mini">
-        <%= link_to kanji.kanji, kanji %>
-      </div>
-    <%# <td><%= link_to 'Destroy', kanji, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= link_to kanji.kanji, kanji, class: "kanji-mini"%>
     <% end %>
   </div>
 <% end %>
 
-<%= link_to '新しい漢字を追加', new_kanji_path %>
