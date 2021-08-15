@@ -1,0 +1,17 @@
+<%= form_with(model: kanji) do |form| %>
+  <% if kanji.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kanji.errors.count, "error") %> prohibited this kanji from being saved:</h2>
+
+      <ul>
+        <% kanji.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
